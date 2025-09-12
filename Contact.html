@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Akshar Finance</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar container">
+      <div class="logo">Akshar Finance Services</div>
+      <ul class="nav-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="Services.html">Services</a></li>
+        <li><a href="./clients.html">Clients</a></li>
+        <li><a href="./about.html">About Us</a></li>
+        <li><a href="./contact.html" class="active">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <h1>Contact Us</h1>
+      <p>We’d love to hear from you—let’s discuss your lending needs.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container row">
+
+      <!-- Left: Contact Form -->
+      <div class="col text-col">
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="from_name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="reply_to" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>&copy; 2025 Akshar Finance Services</p>
+    </div>
+  </footer>
+
+  <!-- ✅ EmailJS Integration -->
+  <script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("1UmWCX9fOZY636E39"); // 🔑 Replace with your EmailJS Public Key
+    })();
+
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      emailjs.sendForm("service_v8e4uca", "template_y379nx8", this)
+        .then(() => {
+          alert("✅ Message sent successfully!");
+          this.reset();
+        }, (error) => {
+          alert("❌ Failed to send message. Error: " + JSON.stringify(error));
+        });
+    });
+  </script>
+
+</body>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-inner">
+    
+    <!-- Brand / Tagline -->
+    <div class="f-col">
+      <div class="f-logo">Akshar Finance Services</div>
+      <p class="footer-tagline">Simple. Transparent. Tailored finance solutions.</p>
+      <p class="footer-copy">&copy; 2025 Akshar Finance Services</p>
+    </div>
+    
+    <!-- Legal Links -->
+    <div class="f-col">
+      <h4>Legal</h4>
+      <ul class="f-links">
+        <li><a href="#">Disclaimer</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Complaints</a></li>
+      </ul>
+    </div>
+    
+    <!-- Contact Info -->
+    <div class="f-col">
+      <h4>Contact</h4>
+      <ul class="f-links">
+        <li>📞 <a href="tel:0402569964">0402 569 964</a></li>
+        <li>✉️ <a href="mailto:Hetal@Aksharfinance.com.au">Hetal@Aksharfinance.com.au</a></li>
+      </ul>
+    </div>
+    
+    <!-- Social Media -->
+    <div class="f-col">
+      <h4>Connect</h4>
+      <ul class="f-links social-links">
+        <li>
+          <a href="https://www.linkedin.com/company/akshar-finance-services/?viewAsMember=true" aria-label="LinkedIn">
+            <img src="Images/LinkedIn-logo.png" alt="LinkedIn" class="social-icon"> LinkedIn
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+</html>
