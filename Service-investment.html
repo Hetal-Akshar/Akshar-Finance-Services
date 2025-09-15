@@ -3,23 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Investment Loan - Akshar Finance</title>
+  <title>Investment Loan - Akshar Finance Services</title>
   <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
 <!-- NAV -->
 <header>
   <nav class="navbar container">
-    <div class="logo">Akshar Finance Services</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="Services.html" class="active">Services</a></li>
-      <li><a href="Clients.html">Clients</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="Contact.html">Contact Us</a></li>
+    <a href="./index.html" class="logo">
+      <img src="./Images/Footer-logo.png" alt="Akshar Finance Services Logo">
+    </a>
+
+    <!-- Burger button -->
+    <div class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Nav links -->
+    <ul class="nav-links" id="nav-links">
+      <li><a href="./index.html" class="active">Home</a></li>
+      <li><a href="./services.html">Services</a></li>
+      <li><a href="./clients.html">Clients</a></li>
+      <li><a href="./about.html">About Us</a></li>
+      <li><a href="./contact.html">Contact Us</a></li>
     </ul>
   </nav>
 </header>
+
 
 <section class="hero">
   <div class="container hero-inner">
@@ -72,7 +84,7 @@
       <h4>Contact</h4>
       <ul class="f-links">
         <li>📞 <a href="tel:0402569964">0402 569 964</a></li>
-        <li>✉️ <a href="mailto:Hetal@Aksharfinance.com.au">Hetal@Aksharfinance.com.au</a></li>
+        <li>✉️ <a href="mailto:Hetal@aksharfinance.com.au">Hetal@aksharfinance.com.au</a></li>
       </ul>
     </div>
     
@@ -89,5 +101,14 @@
     </div>
   </div>
 </footer>
+<script>
+  const burger = document.getElementById('burger');
+  const nav = document.getElementById('nav-links');
+
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('show');
+    burger.classList.toggle('active');
+  });
+</script>
 </body>
 </html>

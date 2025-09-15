@@ -337,3 +337,160 @@ footer {
   object-fit: cover;
 }
 
+/* Responsive tweaks for Getting Started */
+@media (max-width: 768px) {
+  .pill-wrap {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .pill {
+    flex: 1 1 calc(50% - 10px);  /* two per row on tablets */
+    text-align: center;
+  }
+
+  .gs-text .gs-btn {
+    margin-top: 18px;
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .pill {
+    flex: 1 1 100%;   /* one per row on small phones */
+  }
+
+  .gs-text {
+    padding: 0 12px;
+  }
+
+  .gs-text .gs-btn {
+    width: 100%;   /* full width button on phones */
+    max-width: 260px;
+  }
+}
+
+
+/* Responsive layout for Services grid */
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+    gap: 18px;
+  }
+  .service-card {
+    max-width: none;   /* let them stretch */
+    margin: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .services-grid {
+    grid-template-columns: 1fr; /* 1 per row on small phones */
+    gap: 16px;
+  }
+  .service-card {
+    width: 100%;
+    max-width: 300px;  /* keeps it neat */
+    margin: 0 auto;    /* centers each card */
+  }
+}
+
+/* Service card animations */
+.service-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+  will-change: transform, box-shadow;
+}
+
+.service-card:hover {
+  background: #00b3ff;
+  color: #fff;
+  transform: translateY(-6px) scale(1.03); /* slight lift + zoom */
+  box-shadow: 0 14px 28px rgba(0,0,0,0.15);
+}
+
+.service-card:hover h3,
+.service-card:hover p {
+  color: #fff;
+}
+
+/* Burger icon (hidden on desktop) */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.burger span {
+  width: 25px;
+  height: 3px;
+  background: #00b3ff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile nav hidden by default */
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 10%;
+    background: #fff;
+    border: 1px solid #e6eef5;
+    border-radius: 10px;
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
+    display: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
+/* Burger active state (turn into X) */
+.burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.burger.active span:nth-child(2) {
+  opacity: 0; /* middle line disappears */
+}
+.burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Smooth animation */
+.burger span {
+  transition: all 0.3s ease;
+}
+
+.logo,
+.f-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #00b3ff;
+  text-decoration: none;  /* remove underline */
+}
+
+.logo img,
+.f-logo img {
+  height: 150px; /* adjust for navbar */
+  width: auto;
+  display: block;
+}
+
+.f-logo {
+  color: #fff; /* footer logo stays white */
+}
+
+.f-logo img {
+  height: 80px; /* smaller in footer */
+}
