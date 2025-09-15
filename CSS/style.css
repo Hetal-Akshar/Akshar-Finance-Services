@@ -482,7 +482,7 @@ footer {
 
 .logo img,
 .f-logo img {
-  height: 150px; /* adjust for navbar */
+  height: 70px; /* adjust for navbar */
   width: auto;
   display: block;
 }
@@ -492,5 +492,15 @@ footer {
 }
 
 .f-logo img {
-  height: 80px; /* smaller in footer */
+  height: 70px; /* smaller in footer */
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    height: 42px;  /* slightly smaller on phones */
+  }
+
+  .f-logo img {
+    height: 32px;
+  }
 }
