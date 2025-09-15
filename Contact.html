@@ -5,14 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - Akshar Finance Services</title>
   <link rel="stylesheet" href="CSS/style.css">
+  <link rel="icon" type="image/png" href="Images/favicon.png">
 </head>
 
 <body>
 
+  <!-- HEADER -->
   <header>
     <nav class="navbar container">
       <a href="index.html" class="logo">
-        <img src="./Images/Footer-logo.png" alt="Akshar Finance Services Logo">
+        <img src="Images/Footer-logo.png" alt="Akshar Finance Services Logo">
       </a>
   
       <!-- Burger button -->
@@ -24,16 +26,17 @@
   
       <!-- Nav links -->
       <ul class="nav-links" id="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="clients.html">Clients</a></li>
         <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="contact.html" class="active">Contact Us</a></li>
       </ul>
     </nav>
   </header>
   
 
+  <!-- HERO -->
   <section class="hero">
     <div class="container hero-inner">
       <h1>Contact Us</h1>
@@ -41,10 +44,9 @@
     </div>
   </section>
 
+  <!-- CONTACT FORM -->
   <section class="section">
     <div class="container row">
-
-      <!-- Left: Contact Form -->
       <div class="col text-col">
         <form id="contact-form" class="contact-form">
           <div class="form-group">
@@ -73,9 +75,47 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <div class="container footer-inner">
-      <p>&copy; 2025 Akshar Finance Services</p>
+      
+      <!-- Brand / Tagline -->
+      <div class="f-col">
+        <div class="f-logo">Akshar Finance Services</div>
+        <p class="footer-tagline">Simple. Transparent. Tailored finance solutions.</p>
+        <p class="footer-copy">&copy; 2025 Akshar Finance Services</p>
+      </div>
+      
+      <!-- Legal Links -->
+      <div class="f-col">
+        <h4>Legal</h4>
+        <ul class="f-links">
+          <li><a href="#">Disclaimer</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Complaints</a></li>
+        </ul>
+      </div>
+      
+      <!-- Contact Info -->
+      <div class="f-col">
+        <h4>Contact</h4>
+        <ul class="f-links">
+          <li>📞 <a href="tel:0402569964">0402 569 964</a></li>
+          <li>✉️ <a href="mailto:hetal@aksharfinance.com.au">hetal@aksharfinance.com.au</a></li>
+        </ul>
+      </div>
+      
+      <!-- Social Media -->
+      <div class="f-col">
+        <h4>Connect</h4>
+        <ul class="f-links social-links">
+          <li>
+            <a href="https://www.linkedin.com/company/akshar-finance-services/" aria-label="LinkedIn">
+              <img src="Images/LinkedIn-logo.png" alt="LinkedIn" class="social-icon"> LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </footer>
 
@@ -83,7 +123,7 @@
   <script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
   <script>
     (function() {
-      emailjs.init("1UmWCX9fOZY636E39"); // 🔑 Replace with your EmailJS Public Key
+      emailjs.init("1UmWCX9fOZY636E39"); // 🔑 Public Key - safe but consider hiding if possible
     })();
 
     document.getElementById("contact-form").addEventListener("submit", function(e) {
@@ -97,60 +137,15 @@
           alert("❌ Failed to send message. Error: " + JSON.stringify(error));
         });
     });
+
+    // Burger menu
+    const burger = document.getElementById('burger');
+    const nav = document.getElementById('nav-links');
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('show');
+      burger.classList.toggle('active');
+    });
   </script>
 
 </body>
-
-<!-- FOOTER -->
-<footer>
-  <div class="container footer-inner">
-    
-    <!-- Brand / Tagline -->
-    <div class="f-col">
-      <div class="f-logo">Akshar Finance Services</div>
-      <p class="footer-tagline">Simple. Transparent. Tailored finance solutions.</p>
-      <p class="footer-copy">&copy; 2025 Akshar Finance Services</p>
-    </div>
-    
-    <!-- Legal Links -->
-    <div class="f-col">
-      <h4>Legal</h4>
-      <ul class="f-links">
-        <li><a href="#">Disclaimer</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Complaints</a></li>
-      </ul>
-    </div>
-    
-    <!-- Contact Info -->
-    <div class="f-col">
-      <h4>Contact</h4>
-      <ul class="f-links">
-        <li>📞 <a href="tel:0402569964">0402 569 964</a></li>
-        <li>✉️ <a href="mailto:Hetal@aksharfinance.com.au">Hetal@aksharfinance.com.au</a></li>
-      </ul>
-    </div>
-    
-    <!-- Social Media -->
-    <div class="f-col">
-      <h4>Connect</h4>
-      <ul class="f-links social-links">
-        <li>
-          <a href="https://www.linkedin.com/company/akshar-finance-services/?viewAsMember=true" aria-label="LinkedIn">
-            <img src="Images/LinkedIn-logo.png" alt="LinkedIn" class="social-icon"> LinkedIn
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</footer>
-<script>
-  const burger = document.getElementById('burger');
-  const nav = document.getElementById('nav-links');
-
-  burger.addEventListener('click', () => {
-    nav.classList.toggle('show');
-    burger.classList.toggle('active');
-  });
-</script>
 </html>
