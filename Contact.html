@@ -14,7 +14,7 @@
   <header>
     <nav class="navbar container">
       <a href="index.html" class="logo">
-        <img src="Images/Footer-logo.png" alt="Akshar Finance Services Logo">
+        <img src="Images/Logo Company.jpg" alt="Akshar Finance Services Logo">
       </a>
   
       <!-- Burger button -->
@@ -44,9 +44,10 @@
     </div>
   </section>
 
-  <!-- CONTACT FORM -->
+  <!-- CONTACT FORM & IMAGE -->
   <section class="section">
     <div class="container row">
+      <!-- Left: Contact Form -->
       <div class="col text-col">
         <form id="contact-form" class="contact-form">
           <div class="form-group">
@@ -72,6 +73,24 @@
           <button type="submit" class="btn btn-primary">Send</button>
         </form>
       </div>
+
+      <!-- Right: Image -->
+      <div class="col img-col contact-img">
+        <img src="Images/contact-banner.png" alt="Contact Akshar Finance Services">
+      </div>
+    </div>
+  </section>
+
+  <!-- DIRECT CONTACT INFO -->
+  <section class="section alt contact-direct">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <p>If you’d prefer to reach out directly, here are our details:</p>
+      <ul class="direct-links">
+        <li><strong>Name:</strong> Hetal Patel</li>
+        <li><strong>Phone:</strong> <a href="tel:0402569964">0402 569 964</a></li>
+        <li><strong>Email:</strong> <a href="mailto:hetal@aksharfinance.com.au">hetal@aksharfinance.com.au</a></li>
+      </ul>
     </div>
   </section>
 
@@ -123,7 +142,7 @@
   <script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
   <script>
     (function() {
-      emailjs.init("1UmWCX9fOZY636E39"); // 🔑 Public Key - safe but consider hiding if possible
+      emailjs.init("1UmWCX9fOZY636E39"); // 🔑 Public Key
     })();
 
     document.getElementById("contact-form").addEventListener("submit", function(e) {
